@@ -141,9 +141,9 @@ def layoutFunc():
     with col1:
 
         if compute_engine:
-            barfi_result = st_barfi(base_blocks=default_blocks_category,
-                                    compute_engine=compute_engine,
-                                    load_schema=load_schema)
+            st.session_state["barfi_result"] = st_barfi(base_blocks=default_blocks_category,
+                                                        compute_engine=compute_engine,
+                                                        load_schema=load_schema)
 
 
     with col2:

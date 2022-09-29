@@ -131,7 +131,7 @@ def layoutFunc():
 
 
 
-		# print(st.session_state["galleryPage"])
+	# print(st.session_state["galleryPage"])
 	# Get start and end indices of the next page of the dataframe
 	gallery_start_idx = st.session_state["galleryPage"] * gallery_N
 	gallery_end_idx = (1 + st.session_state["galleryPage"]) * gallery_N
@@ -197,10 +197,20 @@ def layoutFunc():
 
 		with col1_cont:
 			with col1:
-				[st.image(images[index]) for index in [0, 3, 6] if index < len(images)]
+				for index in [0, 3, 6]:
+					if index < len(images):
+						st.info(Image.open(images[index]).info)
+						st.image(images[index])
 		with col2_cont:
 			with col2:
-				[st.image(images[index]) for index in [1, 4, 7] if index < len(images)]
+				for index in [1, 4, 7]:
+					if index < len(images):
+						st.info(Image.open(images[index]).info)
+						st.image(images[index])
 		with col3_cont:
 			with col3:
-				[st.image(images[index]) for index in [2, 5, 8] if index < len(images)]
+				for index in [2, 5, 8]:
+					if index < len(images):
+						st.info(Image.open(images[index]).info)
+						st.image(images[index])
+

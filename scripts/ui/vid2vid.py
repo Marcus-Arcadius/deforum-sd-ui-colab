@@ -4,6 +4,7 @@ import streamlit as st
 
 from scripts.tools.deforum_runner import runner
 from scripts.tools.nsp.nsp_pantry import parser
+from scripts.tools.sd_utils import check_if_nodes
 
 # streamlit imports
 #from streamlit import StopException
@@ -64,6 +65,7 @@ def save_uploaded(uploadedfile):
 
 
 def layoutFunc():
+	check_if_nodes()
 	def_runner = runner()
 
 	# with st.form("vid2vid-inputs"):
